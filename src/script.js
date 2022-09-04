@@ -22,11 +22,21 @@ function playOneRound(playerSelection,  computerSelection) {
             result = `${computerSelection} beats ${playerSelection}! Too bad!`;
         }
 
-    else {
+    else if (
+        (playerSelection == 'Rock') ||
+        (playerSelection == 'Paper') ||
+        (playerSelection == 'Scissors')
+    ){
         result = `You win! ${playerSelection} beats ${computerSelection}!`
     }
     
+    else {
+        result = 'Invalid input.';
+    }
     return result;
 }
-
-console.log(playOneRound('Rock'));
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         playOneRound();
+//     }
+// }
