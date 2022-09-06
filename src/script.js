@@ -64,17 +64,29 @@ function game() {
     let computerSelection = getComputerChoice();
     resultMessage.textContent = playOneRound(playerSelection, computerSelection);
 
-    if((playerScore == winnerScore || computerScore == winnerScore)) {
+    if(hasWon()) {
         displayWinner();
     }
 
     
 }
 
+function hasWon() {
+    if((playerScore == winnerScore || computerScore == winnerScore)) {
+        return true;
+    }
+
+    return false;
+}
+
 weapons.forEach((weapon) => {
     weapon.addEventListener('click', (e) => {
-        currentWeapon = e.target.textContent;
-        console.log(currentWeapon);
+        currentWeapon = e.target.textContent.trim();
+        console.log(e);
+        if (hasWon()) {
+            return;
+        }
         game();
+        
     });
 });
