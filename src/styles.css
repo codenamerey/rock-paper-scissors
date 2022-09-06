@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    padding: 10px 15%;
+}
+
+.weapon-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.weapon-holder > button > img {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.weapon-holder > button {
+    position: relative;
+}
+
+.weapon-holder > button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    z-index: 1;
+}
+
+.result {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
