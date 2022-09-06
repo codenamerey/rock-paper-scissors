@@ -5,20 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width
     , initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
     <script src="./src/script.js" defer></script>
     <title>Rock, Paper, Scissors!</title>
 </head>
 <body>
-    <div>
-        <button class="weapon">Rock</button>
-        <button class="weapon">Paper</button>
-        <button class="weapon">Scissors</button>
+    <div class="weapon-holder">
+        <button class="weapon">
+            <img src="https://cdn-icons-png.flaticon.com/512/4405/4405457.png" alt="Picture of a rock"><p> Rock</p></button>
+        <button class="weapon">
+            <img src="https://cdn-icons-png.flaticon.com/512/2377/2377955.png" alt="Picture of a paper"><p> Paper</p></button>
+        <button class="weapon"><img src="https://cdn-icons-png.flaticon.com/512/40/40734.png" alt="Picture of a pair of scissors"><p> Scissors</p></button>
     </div>
     <div class="result">
-        <p id="player-computer-score">
-            <span id="playerScore">0</span>
-            <span id="computerScore">0</span>
-        </p>
+        <div id="player-computer-score">
+            <p>
+                <span id="playerScore">0</span>
+            </p>
+            <p>
+                <span id="computerScore">0</span>
+            </p>
+        </div>
         <p id="result-message">Play a game of rock, paper, scissors with the JS Bot!</p>
     </div>
 </body>
