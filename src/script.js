@@ -2,6 +2,11 @@ let playerScore = 0;
 let computerScore = 0;
 let winnerScore = 5;
 
+let resultMessage = document.getElementById('result-message');
+let _playerScore = document.getElementById('playerScore');
+let _computerScore = document.getElementById('computerScore');
+let weapons = document.querySelectorAll('.weapon');
+let currentWeapon = '';
 
 function getComputerChoice() {
     let choices = ['Rock', 'Paper', 'Scissors'];
@@ -24,8 +29,8 @@ function playOneRound(playerSelection,  computerSelection) {
 
         {
             computerScore++;
-            result = `${computerSelection} beats ${playerSelection}! Too bad!
-            Your score is ${playerScore}, computer score is ${computerScore}`;
+            _computerScore.textContent = computerScore;
+            result = `${computerSelection} beats ${playerSelection}! Too bad!`;
         }
 
     else if (
@@ -34,8 +39,8 @@ function playOneRound(playerSelection,  computerSelection) {
         (playerSelection == 'Scissors')
     ){
         playerScore++;
-        result = `You win! ${playerSelection} beats ${computerSelection}!
-        Your score is ${playerScore}, computer score is ${computerScore}`   
+        _playerScore.textContent = playerScore;
+        result = `You win! ${playerSelection} beats ${computerSelection}!`   
     }
     
     else {
@@ -46,22 +51,30 @@ function playOneRound(playerSelection,  computerSelection) {
 
 function displayWinner() {
     if (playerScore > computerScore) {
-        console.log("You Win! You beat the computer!");
+        resultMessage.textContent = "You Win! You beat the computer!";
     }
 
     else {
-        console.log("You lost. Maybe computers will take over us one day after all.");
+        resultMessage.textContent = "You lost. Maybe computers will take over us one day after all.";
     }
 }
 
 function game() {
-    while(!(playerScore == winnerScore || computerScore == winnerScore)) {
-        let playerSelection = prompt("Enter your bet (Rock, Paper, Scissors):");
-        let computerSelection = getComputerChoice();
-        console.log(playOneRound(playerSelection, computerSelection));
+    let playerSelection = currentWeapon;
+    let computerSelection = getComputerChoice();
+    resultMessage.textContent = playOneRound(playerSelection, computerSelection);
+
+    if((playerScore == winnerScore || computerScore == winnerScore)) {
+        displayWinner();
     }
 
-    displayWinner();
+    
 }
 
-game();
+weapons.forEach((weapon) => {
+    weapon.addEventListener('click', (e) => {
+        currentWeapon = e.target.textContent;
+        console.log(currentWeapon);
+        game();
+    });
+});
