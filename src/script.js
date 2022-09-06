@@ -6,6 +6,7 @@ let resultMessage = document.getElementById('result-message');
 let _playerScore = document.getElementById('playerScore');
 let _computerScore = document.getElementById('computerScore');
 let weapons = document.querySelectorAll('.weapon');
+let restart_b = document.querySelector('.restart');
 let currentWeapon = '';
 
 function getComputerChoice() {
@@ -66,9 +67,21 @@ function game() {
 
     if(hasWon()) {
         displayWinner();
+        restart_b.style.display = 'block';
+        restart_b.addEventListener('click', restartGame);
     }
 
     
+}
+
+function restartGame() {
+    restart_b.style.display = 'none';
+    playerScore = 0;
+    computerScore = 0;
+    _playerScore.textContent = '0';
+    _computerScore.textContent = '0';
+    playerSelection = '';
+    resultMessage.textContent = 'Play a game of rock, paper, scissors with the JS Bot!';
 }
 
 function hasWon() {
