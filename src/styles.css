@@ -1,6 +1,9 @@
 body {
     padding: 0;
     margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -17,28 +20,56 @@ p {
 }
 
 .container {
+    text-align: center;
     font-family: sans-serif;
     display: flex;
     padding: 10px 15%;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .weapon-holder {
+    box-sizing: border-box;
+    height: 100%;
+    border: 1px solid black;
+    border-right: none;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
     padding: 10px;
+    flex-shrink: 2;
+    flex-basis: 400px;
+}
+
+.result {
+    box-sizing: border-box;
+    height: 100%;
+    border: 1px solid black;
+    flex-shrink: 1;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 400px;
 }
 
 
 .weapon-holder > button > img {
-    width: 150px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
+    max-width: 100%;
+    height: auto;
 }
 
-.weapon-holder > button {
+.weapon-holder > .weapon {
+    max-width: 150px;
+    height: fit-content;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+    align-items: center;
 }
 
 .weapon-holder > button::before {
@@ -49,14 +80,7 @@ p {
     z-index: 1;
 }
 
-.result {
-    font-size: 20px;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 #player-computer-score {
     display: flex;
@@ -75,4 +99,10 @@ p {
 
 button {
     background: none;
+}
+
+.footer {
+    text-align: center;
+    background: red;
+    color: white;
 }
