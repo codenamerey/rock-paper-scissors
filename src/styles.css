@@ -116,6 +116,7 @@ p {
 }
 
 button {
+    transition: 0.07s;
     background: none;
 }
 
@@ -123,4 +124,9 @@ button {
     text-align: center;
     background: red;
     color: white;
+}
+
+.clicked {
+    transform: scale(1.1);
+    border-color: red;
 }

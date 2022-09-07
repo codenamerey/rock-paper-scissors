@@ -92,8 +92,13 @@ function hasWon() {
     return false;
 }
 
+function removeClass(e) {
+    e.target.classList.remove('clicked');
+}
+
 weapons.forEach((weapon) => {
     weapon.addEventListener('click', (e) => {
+        e.target.classList.add('clicked');
         currentWeapon = e.target.textContent.trim();
         console.log(e);
         if (hasWon()) {
@@ -102,4 +107,6 @@ weapons.forEach((weapon) => {
         game();
         
     });
+
+    weapon.addEventListener('transitionend', removeClass);
 });
