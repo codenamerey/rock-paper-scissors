@@ -3,6 +3,19 @@ body {
     margin: 0;
 }
 
+.header {
+    background: rgba(255, 0, 0, 1);
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    padding: 15px 0;
+    font-weight: 900;
+}
+
+p {
+    margin: 0;
+}
+
 .container {
     font-family: sans-serif;
     display: flex;
