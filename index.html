@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,31 +10,47 @@
     <script src="./src/script.js" defer></script>
     <title>Rock, Paper, Scissors!</title>
 </head>
+
 <body>
-    <div class="weapon-holder">
-        <button class="weapon">
-            <img src="https://cdn-icons-png.flaticon.com/512/4405/4405457.png" alt="Picture of a rock"><p> Rock</p></button>
-        <button class="weapon">
-            <img src="https://cdn-icons-png.flaticon.com/512/2377/2377955.png" alt="Picture of a paper"><p> Paper</p></button>
-        <button class="weapon"><img src="https://cdn-icons-png.flaticon.com/512/40/40734.png" alt="Picture of a pair of scissors"><p> Scissors</p></button>
+    <div class="header">
+        
     </div>
-    <div class="result">
-        <div id="player-computer-score">
-            <p>
-                <div class="container">
+    <div class="container">
+
+
+        <div class="weapon-holder">
+            <button class="weapon">
+                <img src="https://cdn-icons-png.flaticon.com/512/4405/4405457.png" alt="Picture of a rock">
+                <p> Rock</p>
+            </button>
+            <button class="weapon">
+                <img src="https://cdn-icons-png.flaticon.com/512/2377/2377955.png" alt="Picture of a paper">
+                <p> Paper</p>
+            </button>
+            <button class="weapon"><img src="https://cdn-icons-png.flaticon.com/512/40/40734.png"
+                    alt="Picture of a pair of scissors">
+                <p> Scissors</p>
+            </button>
+        </div>
+        <div class="result">
+            <div id="player-computer-score">
+                <p>
+                <div id="container">
                     <p id="playerScore">0</p>
                     <p>Player Score</p>
                 </div>
-            </p>
-            <p>
-                <div class="container">
+                </p>
+                <p>
+                <div id="container">
                     <p id="computerScore">0</p>
                     <p>Computer Score</p>
                 </div>
-            </p>
+                </p>
+            </div>
+            <p id="result-message">Play a game of rock, paper, scissors with the JS Bot!</p>
+            <button class="restart">Play Again</button>
         </div>
-        <p id="result-message">Play a game of rock, paper, scissors with the JS Bot!</p>
-        <button class="restart">Play Again</button>
     </div>
 </body>
+
 </html>
