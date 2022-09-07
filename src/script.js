@@ -100,7 +100,6 @@ weapons.forEach((weapon) => {
     weapon.addEventListener('click', (e) => {
         e.target.classList.add('clicked');
         currentWeapon = e.target.textContent.trim();
-        console.log(e);
         if (hasWon()) {
             return;
         }
